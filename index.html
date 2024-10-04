@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+        div {
+            border: 2px solid black;
+            text-align: center;
+            background-color: antiquewhite;
+            border-radius: 20px;
+            width: 70vw;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <form id="form1">
+            <h3>ENTER YOUR DETAILS AND GET YOUR ID CARD</h3>
+            <label for="ip1">Name:</label>
+            <input type="text" id="ip1" name="" required style="margin-left: 40px;" /><br><br>
+
+            <label for="ip2">AGE:</label>
+            <input type="text" id="ip2" name="" required style="margin-left: 46px;" /><br><br>
+
+            <label for="ip3">MOBILE NO:</label>
+            <input type="text" id="ip3" name="" required /><br><br>
+
+            <label for="ip4">BLOOD GRP:</label>
+            <input type="text" id="ip4" name="" required /><br><br>
+
+            <label for="ip5">EMAIL:</label>
+            <input type="text" id="ip5" name="" required style="margin-left: 40px;" /><br><br>
+
+            <label for="ip6">ADDRESS:</label>
+            <input type="text" id="ip6" name="" required style="margin-left: 20px;" /><br><br>
+
+            <input type="submit">
+        </form>
+    </div>
+
+    <div id="output">
+        <h4 id="fname"></h4>
+        <h4 id="fage"></h4>
+        <h4 id="fmobile"></h4>
+        <h4 id="fblood"></h4>
+        <h4 id="femail"></h4>
+        <h4 id="faddress"></h4>
+    </div>
+
+    <script>
+        
+        document.getElementById("form1")
+        .addEventListener("submit", (event) => {
+            event.preventDefault();
+
+            
+            let divdemo = document.createElement("div");
+            divdemo.style.height = "500px";
+            divdemo.style.width = "300px";
+            divdemo.style.marginTop = "50px";
+            divdemo.style.border = "2px solid black";
+            divdemo.style.borderRadius = "20px";
+            divdemo.style.backgroundColor = "yellow";
+            document.body.appendChild(divdemo);
+
+            let name = document.getElementById("ip1").value;
+            let age = document.getElementById("ip2").value;
+            let mobno = document.getElementById("ip3").value;
+            let bldgrp = document.getElementById("ip4").value;
+            let email = document.getElementById("ip5").value;
+            let address = document.getElementById("ip6").value;
+
+            
+            let imgs = document.createElement("img");
+            imgs.setAttribute("src", "./img.svg");
+            imgs.style.width = "100px";
+            imgs.style.height = "100px";
+            imgs.style.marginLeft = "80px";
+            divdemo.appendChild(imgs);
+
+            
+            let fname = document.createElement("h4");
+            fname.innerHTML = "Name: " + name;
+            divdemo.appendChild(fname);
+
+            let fage = document.createElement("h4");
+            fage.innerHTML = "Age: " + age;
+            fage.style.backgroundColor = "green";
+            divdemo.appendChild(fage);
+
+            let fmobile = document.createElement("h4");
+            fmobile.innerHTML = "Mobile: " + mobno;
+            fmobile.style.color = "white";
+            divdemo.appendChild(fmobile);
+
+            let fblood = document.createElement("h4");
+            fblood.innerHTML = "Blood Group: " + bldgrp;
+            divdemo.appendChild(fblood);
+
+            let femail = document.createElement("h4");
+            femail.innerHTML = "Email: " + email;
+            divdemo.appendChild(femail);
+
+            let faddress = document.createElement("h4");
+            faddress.innerHTML = "Address: " + address;
+            divdemo.appendChild(faddress);
+        });
+    </script>
+</body>
+</html>
